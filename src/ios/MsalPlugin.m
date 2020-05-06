@@ -182,7 +182,9 @@
         }
         else
         {
-            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error localizedDescription]];
+            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error userInfo]];
+            NSLog(@"%@", [error userInfo]);
+            NSLog(@"%@", [error localizedDescription]);
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
     }];
