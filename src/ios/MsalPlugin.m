@@ -137,7 +137,9 @@
         account = [[self application] accountForIdentifier:accountId error:&error];
         if (error)
         {
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error localizedDescription]];
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error UserInfo]];
+            NSLog(@"%@", [error userInfo]);
+            NSLog(@"%@", [error localizedDescription]);            
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
             return;
         }
@@ -182,7 +184,7 @@
         }
         else
         {
-            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error userInfo]];
+            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error UserInfo]];
             NSLog(@"%@", [error userInfo]);
             NSLog(@"%@", [error localizedDescription]);
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
