@@ -23,7 +23,7 @@ Here's the JSON you'll need to configure your plugin. If you only have one envir
 <pre>
 {
     "plugin": {
-        "url": "https://github.com/wrobins/cordova-plugin-msal.git#OutSystems-v1.1.1",
+        "url": "https://github.com/mikko-n/cordova-plugin-msal.git#OutSystems-v1.1.3",
         "variables": [
             {
                 "name": "TENANT_ID",
@@ -61,13 +61,13 @@ The options parameter is an object that contains all of your MSAL configuration 
     authorities: [
         {
             type: 'AAD',
-            audience: 'AzureADandPersonalMicrosoftAccount',
+            audience: 'AzureADMyOrg',
             authorityUrl: '',
             cloudInstance: 'MSALAzurePublicCloudInstance',
             default: true
         }
     ],
-    authorizationUserAgent: 'DEFAULT',
+    authorizationUserAgent: 'WEBVIEW',
     multipleCloudsSupported: false,
     brokerRedirectUri: false,
     accountMode: 'SINGLE',
