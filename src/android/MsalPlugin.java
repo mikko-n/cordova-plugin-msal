@@ -164,8 +164,8 @@ public class MsalPlugin extends CordovaPlugin {
                 } catch (IllegalStateException e) {
                     try {
                         MsalPlugin.this.callbackContext.error("Key hash did not match to: "+ URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8")+"\n"+e.getMessage());
-                    } catch(UnsupportedEncodingException e) {
-                        MsalPlugin.this.callbackContext.error(e.getMessage());
+                    } catch(UnsupportedEncodingException ex) {
+                        MsalPlugin.this.callbackContext.error(ex.getMessage());
                     }
                     e.printStackTrace();                    
                 }
