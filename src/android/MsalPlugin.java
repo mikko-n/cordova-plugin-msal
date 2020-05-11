@@ -161,6 +161,7 @@ public class MsalPlugin extends CordovaPlugin {
                 } catch (IllegalStateException e) {
                     e.printStackTrace();
                     Log.d(data);
+                }
                      
             }
         });
