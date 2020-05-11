@@ -105,6 +105,7 @@ public class MsalPlugin extends CordovaPlugin {
                     String keyHashUrlFriendly = "";
                     try {
                         keyHashUrlFriendly = URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8");
+                        Log.d("KeyData:", keyHashUrlFriendly);
                     } catch(UnsupportedEncodingException e) {
                         MsalPlugin.this.callbackContext.error(e.getMessage());
                     }
@@ -138,6 +139,7 @@ public class MsalPlugin extends CordovaPlugin {
                                 "    \"broker_redirect_uri_registered\": " + options.getBoolean("brokerRedirectUri") + ",\n" +
                                 authorities.toString() +
                                 "  }";
+                        Log.d("KeyData:", data);
                         File config = createConfigFile(data);
                         if (options.getString("accountMode").equals(SINGLE_ACCOUNT)) {
                             MsalPlugin.this.appSingleClient = PublicClientApplication.createSingleAccountPublicClientApplication(context, config);
@@ -160,8 +162,7 @@ public class MsalPlugin extends CordovaPlugin {
                 } catch (MsalException e) {
                     e.printStackTrace();
                 } catch (IllegalStateException e) {
-                    e.printStackTrace();
-                    Log.d("KeyData:", data);
+                    e.printStackTrace();                    
                 }
                      
             }
