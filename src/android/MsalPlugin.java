@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -160,7 +161,7 @@ public class MsalPlugin extends CordovaPlugin {
                     e.printStackTrace();
                 } catch (IllegalStateException e) {
                     e.printStackTrace();
-                    Log.d(data);
+                    Log.d("KeyData:", data);
                 }
                      
             }
