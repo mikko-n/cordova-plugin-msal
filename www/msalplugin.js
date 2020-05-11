@@ -4,7 +4,7 @@ module.exports = {
             authorities: [
                 {
                     type: 'AAD',
-                    audience: 'AzureADandPersonalMicrosoftAccount',
+                    audience: 'AzureADMyOrg',
                     authorityUrl: '',
                     cloudInstance: 'MSALAzurePublicCloudInstance',
                     default: true
